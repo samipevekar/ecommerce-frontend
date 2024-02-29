@@ -41,23 +41,62 @@
     border-radius: 10px;
     background-color: red;
 }
+
 .nav-login-cart{
     display: flex;
     align-items: center;
     gap: 45px;
     cursor: pointer;
+    position: relative;
 }
+.nav-login-cart .userInfo{
+    width: 45px;
+}
+.loginandsignup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    background:radial-gradient(rgb(255, 200, 251),white);
+    right: 0;
+    top: 60px;
+    min-height: fit-content;
+    min-width: 250px;
+    padding: 30px 10px;
+    border-radius: 5px;
+    line-height: 40px;
+    border: 1px solid;
+
+}
+.userinformation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+} 
+.userinformation img{
+    margin-right: 5px;
+}
+
+.logout_icon{
+    height: 15px;
+}
+
 .nav-login-cart button{
-    width: 100px;
-    height: 48px;
+    width: 80px;
+    height: 38px;
     outline: none;
     border: 1px solid gray;
-    border-radius: 75px;
+    border-radius: 5px;
     color: #515151;
     font-size: 20px;
     font-weight: 500;
     background-color: white;
     cursor: pointer;
+    margin-top: 20px;
+
 }
 .nav-login-cart button:active{
     background-color: aliceblue;
@@ -79,6 +118,9 @@
     display: none;
 }
 @media(max-width:1280px){
+    .logout_icon{
+        height: 15px;
+    }
     .navbar{
         padding: 12px 50px;
     }
@@ -95,11 +137,6 @@
     .nav-login-cart{
         gap: 30px;
     }
-    .nav-login-cart button{
-        width: 90px;
-        font-size: 16px;
-        height: 40px;
-    }
     .nav-cart-count{
         margin-left: -40px;
         font-size: 12px;
@@ -113,11 +150,6 @@
         gap: 25px;
         font-size: 14px;
     }
-    .nav-login-cart button{
-        width: 80px;
-        font-size: 14px;
-        height: 30px;
-    }
     .nav-login-cart img{
         width: 30px;
     }
@@ -125,6 +157,14 @@
         width: 18px;
         height: 18px;
     }
+    .loginandsignup{
+        top: 55px;
+    }
+    .logout_icon{
+        height: 15px;
+        width: 10px;
+    }
+    
 }
 @media (max-width:800px){
     .navbar{
@@ -170,5 +210,8 @@
     }
     .nav-login-cart{
         transform: scale(.8);
+    }
+    .loginandsignup{
+        top: 63px;
     }
 }
