@@ -67,7 +67,12 @@
     border: 1px solid #ebebeb;
     border-radius: 3px;
     cursor: pointer;
+    margin: 5px;
 }
+.productdisplay-right-sizes div.selected {
+    background-color: #ff4141; /* Change background color when selected */
+    color: white;
+  }
 .productdisplay-right-sizes div:focus{
     background-color: black;
     color: white;
