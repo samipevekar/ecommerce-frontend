@@ -59,7 +59,7 @@
     position: absolute;
     align-items: center;
     text-align: center;
-    background:radial-gradient(rgb(255, 200, 251),white);
+    background-color: white;
     right: 0;
     top: 60px;
     min-height: fit-content;
@@ -81,6 +81,10 @@
     align-items: center;
     
 } 
+.userInfo{
+    border-radius: 50%;
+
+}
 .userinformation img{
     margin-right: 5px;
 }

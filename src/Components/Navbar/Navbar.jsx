@@ -5,11 +5,38 @@ import logo from '../Assets/logo.png';
 import cart_icon from '../Assets/cart_icon.png';
 import { ShopContext } from '../../Context/ShopContext';
 import nav_dropdown from '../Assets/down.png';
-import user1 from '../Assets/account.png';
+import user1 from '../Assets/user.png';
+import axios from "axios"
 
 
-export default function Navbar() {
+export default function Navbar() {    
+    
+    // get google user 
+    const [userData,setUserData] = useState(0)
 
+    const getuser = async()=>{
+        try {
+            const response = await axios("http://localhost:4000/login/success",{withCredentials:true})
+            setUserData(response.data.user)
+            console.log(userData)
+        } catch (error) {
+            console.log("error",error)
+        }
+    }
+    useEffect(()=>{
+        getuser()
+        // eslint-disable-next-line
+    },[])
+    
+
+
+    // google logout 
+    const logout = ()=>{
+        window.open("http://localhost:4000/logout","_self")
+    }
+
+
+    // creating user profile 
 
     const [menu, setMenu] = useState("shop"); //to set underline to the li in ul
     const [showLoginSignup, setShowLoginSignup] = useState(false); // State to control visibility of login/signup section
@@ -25,6 +52,8 @@ export default function Navbar() {
         setShowLoginSignup((prev) => !prev ); // Toggle the state to show/hide login/signup section
     };
 
+
+    // fetching userdata with my login page 
     const [userdata,setUserdata] = useState('')
 
 
@@ -62,24 +91,26 @@ export default function Navbar() {
 
             <div className="nav-login-cart">
                 <div className="userinformation">
-                    <img src={user1} className='userInfo'  onClick={user_toggle} alt="" />
-                    <div onClick={user_toggle}>{userdata.name}</div>
+                    <img src={userData?userData.image:user1} className='userInfo'  onClick={user_toggle} alt="" />
+                    <div onClick={user_toggle}>{userData?userData.displayName:userdata.name}</div>
                 </div>
                 {showLoginSignup && ( // Conditionally render login/signup section based on state
                     <div className="loginandsignup" >
 
                         <div className="userdata">
-                        <img src={user1} className='userInfo' alt="" />
-                            <p style={{fontSize:"20px"}}><b>{userdata.name}</b></p>
-                            <p>{userdata.email}</p>
+                        <img src={userData?userData.image:user1} className='userInfo' alt="" />
+                            <p style={{fontSize:"20px"}}><b>{userData?userData.displayName:userdata.name}</b></p>
+                            <p>{userData?userData.email:userdata.email}</p>
                         </div>                      
-                        {localStorage.getItem("auth-token") ?
-                            <button onClick={() => { localStorage.removeItem("auth-token"); window.location.pathname = "/" }}>Logout</button> :
+                        {localStorage.getItem("auth-token") || userData ?
+                            <button onClick={() => {logout(); localStorage.removeItem("auth-token"); window.location.pathname = "/" }}>Logout</button> :
                             <Link to='/login'><button>Login</button></Link>
                         }
                         
+                        
                     </div>
                 )}
+                
                 <Link to='/cart'><img src={cart_icon} alt="" /></Link>
                 <div className="nav-cart-count">{getTotalCartItems()}</div>
             </div>

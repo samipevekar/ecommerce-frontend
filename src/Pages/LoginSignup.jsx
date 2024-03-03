@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import './CSS/LoginSignup.css'
+import google_logo from "../Components/Assets/google-logo.png"
 
 
 export default function LoginSignup() {
+
+  const loginwithgoogle = ()=>{
+    window.open("http://localhost:4000/auth/google/callback","_self")
+  }
 
   
 
@@ -74,8 +79,7 @@ export default function LoginSignup() {
         <button onClick={()=>{state==="Login"?login():signup()}}>Continue</button>
         {state==="Sign Up" ?<p className="loginsignup-login">Already have an account? <span onClick={()=>{setState("Login")}}>Login here</span></p>
         :<p className="loginsignup-login">Create an account? <span onClick={()=>{setState("Sign Up")}}>Click here</span></p>}
-        
-      
+        <button onClick={loginwithgoogle} className='googleButton'><span><img className='google-logo' src={google_logo} alt="" /></span>  Sign in With Google</button>
       </div>
       
     </div>

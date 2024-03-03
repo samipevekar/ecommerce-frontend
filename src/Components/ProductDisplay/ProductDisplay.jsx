@@ -13,6 +13,8 @@ export default function ProductDisplay(props) {
         setSelectedSize(size);
     }
 
+
+
     return (
         <div className='productdisplay'>
             <div className="productdisplay-left">
@@ -55,7 +57,7 @@ export default function ProductDisplay(props) {
                         <div className={selectedSize === 'XXL' ? 'selected' : ''} onClick={() => handleSizeSelect('XXL')}>XXL</div>
                     </div>
                 </div>
-                <button onClick={() => { addToCart(product.id) }} disabled={!localStorage.getItem("auth-token")}>ADD TO CART</button>
+                <button onClick={() => { addToCart(product.id) }}>ADD TO CART</button>
                 <p className='productdisplay-right-category'><span>Category :</span>Women, T-Shirt, Crop Top</p>
                 <p className='productdisplay-right-category'><span>Tags :</span>Modern, Latest</p>
             </div>
