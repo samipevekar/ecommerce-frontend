@@ -32,7 +32,7 @@ export default function Navbar() {
 
     // google logout 
     const logout = ()=>{
-        window.open("https://ecommerce-backend-ccoa.onrender.com/logout","_self")
+        window.open("http://ecommerce-backend-ccoa.onrender.com/logout","_self")
     }
 
 
