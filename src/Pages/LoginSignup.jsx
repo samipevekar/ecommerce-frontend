@@ -6,7 +6,7 @@ import google_logo from "../Components/Assets/google-logo.png"
 export default function LoginSignup() {
 
   const loginwithgoogle = ()=>{
-    window.open("http://localhost:4000/auth/google/callback","_self")
+    window.open("https://ecommerce-backend-ccoa.onrender.com/auth/google/callback","_self")
   }
 
   

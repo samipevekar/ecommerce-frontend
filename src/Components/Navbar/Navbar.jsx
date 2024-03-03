@@ -16,7 +16,7 @@ export default function Navbar() {
 
     const getuser = async()=>{
         try {
-            const response = await axios("http://localhost:4000/login/success",{withCredentials:true})
+            const response = await axios("https://ecommerce-backend-ccoa.onrender.com/login/success",{withCredentials:true})
             setUserData(response.data.user)
             console.log(userData)
         } catch (error) {
@@ -32,7 +32,7 @@ export default function Navbar() {
 
     // google logout 
     const logout = ()=>{
-        window.open("http://localhost:4000/logout","_self")
+        window.open("https://ecommerce-backend-ccoa.onrender.com/logout","_self")
     }
 
 
