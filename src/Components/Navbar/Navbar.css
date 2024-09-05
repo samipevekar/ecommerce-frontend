@@ -1,0 +1,226 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+    box-shadow: 0px 1px 3px -2px black;
+    align-items: center;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+.nav-logo p{
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+    color: blue;
+    font-size: 20px;
+    font-weight: 500;
+}
+.nav-menu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    cursor: pointer;
+
+}
+.nav-menu hr{
+    border: no;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: red;
+}
+
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    cursor: pointer;
+    position: relative;
+}
+.nav-login-cart .userInfo{
+    width: 45px;
+}
+.loginandsignup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    right: 0;
+    top: 60px;
+    min-height: fit-content;
+    min-width: 250px;
+    padding: 30px 10px;
+    border-radius: 5px;
+    line-height: 40px;
+    border: 1px solid;
+
+}
+.userdata{
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+.userinformation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+} 
+.userInfo{
+    border-radius: 50%;
+
+}
+.userinformation img{
+    margin-right: 5px;
+}
+
+.logout_icon{
+    height: 15px;
+}
+
+.nav-login-cart button{
+    width: 80px;
+    height: 38px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: #515151;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: white;
+    cursor: pointer;
+    margin-top: 20px;
+
+}
+.nav-login-cart button:active{
+    background-color: aliceblue;
+}
+.nav-cart-count{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    border-radius: 11px;
+    font-size: 14px;
+    background-color: red;
+    color: white;
+}
+#nav-dropdown{
+    display: none;
+}
+@media(max-width:1280px){
+    .logout_icon{
+        height: 15px;
+    }
+    .navbar{
+        padding: 12px 50px;
+    }
+    .nav-logo img{
+        width: 40px;
+    }
+    .nav-logo p{
+        font-size: 25px;
+    }
+    .nav-menu{
+        gap: 30px;
+        font-size: 16px;
+    }
+    .nav-login-cart{
+        gap: 30px;
+    }
+    .nav-cart-count{
+        margin-left: -40px;
+        font-size: 12px;
+    }
+}
+@media (max-width:1024px) {
+    .navbar{
+        padding: 8px 30px;
+    }
+    .nav-menu{
+        gap: 25px;
+        font-size: 14px;
+    }
+    .nav-login-cart img{
+        width: 30px;
+    }
+    .nav-cart-count{
+        width: 18px;
+        height: 18px;
+    }
+    .loginandsignup{
+        top: 55px;
+    }
+    .logout_icon{
+        height: 15px;
+        width: 10px;
+    }
+    
+}
+@media (max-width:800px){
+    .navbar{
+        padding: 10px 0px;
+    }
+    #nav-dropdown{
+        display: block;
+        width: 30px;
+        rotate: -90deg;
+        transition: 0.5s;
+        
+    }
+    .nav-menu{
+        display: flex;
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        background-color: white;
+        justify-content: center;
+        top: 50px;
+        display: none;
+    }
+    .nav-menu-visible{
+        display: flex;
+    }
+    #nav-dropdown.open{
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width:500px){
+    .navbar{
+        width: 8px 0px;
+        gap: 0;
+    }
+    .nav-logo{
+        transform: scale(0.8);
+    }
+    .nav-menu{
+        height: 70px;
+        top: 50px;
+
+    }
+    .nav-login-cart{
+        transform: scale(.8);
+    }
+    .loginandsignup{
+        top: 63px;
+    }
+}
