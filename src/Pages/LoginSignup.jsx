@@ -5,13 +5,13 @@ import google_logo from "../Components/Assets/google-logo.png"
 
 export default function LoginSignup() {
 
-  const loginwithgoogle = ()=>{
-<<<<<<< HEAD
-    window.open("http://localhost:4000/auth/google/callback","_self")
-=======
-    window.open("http://ecommerce-backend-ccoa.onrender.com/auth/google/callback","_self")
->>>>>>> ce05c0e3cbd5a32a7d89a7e080d235aed3f54c04
-  }
+//   const loginwithgoogle = ()=>{
+// <<<<<<< HEAD
+//     // window.open("http://localhost:4000/auth/google/callback","_self")
+// =======
+//     window.open("http://ecommerce-backend-ccoa.onrender.com/auth/google/callback","_self")
+// >>>>>>> ce05c0e3cbd5a32a7d89a7e080d235aed3f54c04
+//   }
   
 
   
@@ -82,7 +82,7 @@ export default function LoginSignup() {
         <button onClick={()=>{state==="Login"?login():signup()}}>Continue</button>
         {state==="Sign Up" ?<p className="loginsignup-login">Already have an account? <span onClick={()=>{setState("Login")}}>Login here</span></p>
         :<p className="loginsignup-login">Create an account? <span onClick={()=>{setState("Sign Up")}}>Click here</span></p>}
-        <button onClick={loginwithgoogle} className='googleButton'><span><img className='google-logo' src={google_logo} alt="" /></span>  Sign in With Google</button>
+        {/* <button onClick={loginwithgoogle} className='googleButton'><span><img className='google-logo' src={google_logo} alt="" /></span>  Sign in With Google</button> */}
       </div>
       
     </div>
