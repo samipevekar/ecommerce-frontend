@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react'
-import './ProductDisplay.css'
-import star_icon from '../Assets/star_icon.png'
-import star_dull_icon from '../Assets/star_dull_icon.png'
-import { ShopContext } from '../../Context/ShopContext'
+import React, { useContext, useState } from 'react';
+import './ProductDisplay.css';
+import star_icon from '../Assets/star_icon.png';
+import star_dull_icon from '../Assets/star_dull_icon.png';
+import { ShopContext } from '../../Context/ShopContext';
 
 export default function ProductDisplay(props) {
     const { product } = props;
@@ -11,9 +11,12 @@ export default function ProductDisplay(props) {
 
     const handleSizeSelect = (size) => {
         setSelectedSize(size);
+    };
+
+    // Conditional rendering to ensure product is defined
+    if (!product) {
+        return <div>Loading...</div>;
     }
-
-
 
     return (
         <div className='productdisplay'>
@@ -62,5 +65,5 @@ export default function ProductDisplay(props) {
                 <p className='productdisplay-right-category'><span>Tags :</span>Modern, Latest</p>
             </div>
         </div>
-    )
+    );
 }
